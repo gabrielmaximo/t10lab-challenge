@@ -6,7 +6,7 @@ import 'express-async-errors';
 
 import routes from './routes';
 
-// import './database';
+import './database';
 
 class App {
   constructor() {
@@ -22,7 +22,7 @@ class App {
   }
 
   routes() {
-    this.server.use('/api', routes);
+    this.server.use(routes);
   }
 
   exceptionHandler() {
@@ -33,7 +33,7 @@ class App {
         return res.status(500).json(errors);
       }
 
-      return res.status(500).json({ error: 'Internal server error' });
+      return res.status(500).json({ error: 'Oops! Internal server error.' });
     });
   }
 }

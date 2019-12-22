@@ -10,6 +10,7 @@ class Database {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useFindAndModify: true,
+      useCreateIndex: true,
     });
   }
 }
