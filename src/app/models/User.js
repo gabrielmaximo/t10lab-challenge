@@ -7,6 +7,12 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    addresses: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Address',
+      },
+    ],
     email: {
       type: String,
       unique: true,
