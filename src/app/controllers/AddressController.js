@@ -37,25 +37,27 @@ class AddressController {
     const { data } = await axios.get(
       `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${address},${local_name}&inputtype=textquery&language=pt-BR&fields=formatted_address,name,geometry&key=${process.env.GMAPS_KEY}`
     );
+    try {
+      const { formatted_address, geometry, name } = data.candidates[0];
 
-    /** Verifica se o endereço existe no banco de dados da google, ou seja, se ele é válido */
-    if (!data.candidates) {
-      return res.status(400).json({ error: 'Invalid Address!' });
+      /** Busca e edita o endereço da pessoa, baseado no id */
+      const response = await Address.findByIdAndUpdate(
+        person.address,
+        {
+          address: formatted_address,
+          geo_location: { ...geometry.location },
+          local_name: name,
+        },
+        { new: true }
+      );
+
+      return res.json(response);
+    } catch (error) {
+      return res.status(400).json({
+        error: 'Address not found or incorrect formatted',
+        example: 'Av. Cesar Finotti, 305 - Jardim Finotti, Uberlândia - MG',
+      });
     }
-    const { formatted_address, geometry, name } = data.candidates[0];
-
-    /** Busca e edita o endereço da pessoa, baseado no id */
-    const response = await Address.findByIdAndUpdate(
-      person.address,
-      {
-        address: formatted_address,
-        geo_location: { ...geometry.location },
-        local_name: name,
-      },
-      { new: true }
-    );
-
-    return res.json(response);
   }
 
   async delete(req, res) {

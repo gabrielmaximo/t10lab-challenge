@@ -33,25 +33,33 @@ class PersonController {
     const { data } = await axios.get(
       `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${address},${local_name}&inputtype=textquery&language=pt-BR&fields=formatted_address,name,geometry&key=${process.env.GMAPS_KEY}`
     );
-    const { formatted_address, geometry, name } = data.candidates[0];
 
-    /** Criando endereço baseado no response.data da API do Gmaps */
-    const { _id: addressId } = await Address.create({
-      address: formatted_address,
-      geo_location: { ...geometry.location },
-      local_name: name,
-    });
+    try {
+      const { formatted_address, geometry, name } = data.candidates[0];
 
-    /** Cria uma pessoa ja contendo o endereço e cordenadas geograficas (lat / long) */
-    const person = await Person.create({
-      user: req.userId,
-      address: addressId,
-      first_name,
-      last_name,
-      cpf,
-    });
+      /** Criando endereço baseado no response.data da API do Gmaps */
+      const { _id: addressId } = await Address.create({
+        address: formatted_address,
+        geo_location: { ...geometry.location },
+        local_name: name,
+      });
 
-    return res.status(201).json(person);
+      /** Cria uma pessoa ja contendo o endereço e cordenadas geograficas (lat / long) */
+      const person = await Person.create({
+        user: req.userId,
+        address: addressId,
+        first_name,
+        last_name,
+        cpf,
+      });
+
+      return res.status(201).json(person);
+    } catch (error) {
+      return res.status(400).json({
+        error: 'Address not found or incorrect formatted',
+        example: 'Av. Cesar Finotti, 305 - Jardim Finotti, Uberlândia - MG',
+      });
+    }
   }
 
   async update(req, res) {
