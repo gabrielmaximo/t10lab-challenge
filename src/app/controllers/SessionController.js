@@ -14,13 +14,13 @@ class SessionControler {
     /** Se o email digitado não estiver cadastrado, ja informa o user que ele errou o email */
     if (!user) {
       return res.status(400).json({
-        error: `Email ${email} não cadastrado!`,
+        error: `Email ${email} does not exists!`,
       });
     }
 
     /** Caso o email exista, esse user errou a senha ou o email */
     if (!(await bcrypt.compare(password, user.password))) {
-      return res.status(401).json({ error: 'Email e/ou Senha inválidos!' });
+      return res.status(401).json({ error: 'Email or password incorrect!' });
     }
 
     const { _id, name } = user;

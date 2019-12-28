@@ -7,7 +7,7 @@ export default async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
-    return res.status(401).json({ error: 'Favor insira um token de acesso!' });
+    return res.status(401).json({ error: 'Please insert a access token!' });
   }
 
   const [, token] = authHeader.split(' ');
@@ -19,6 +19,6 @@ export default async (req, res, next) => {
 
     return next();
   } catch (error) {
-    return res.status(401).json({ error: 'O token inserido é inválido!' });
+    return res.status(401).json({ error: 'Invalid token!' });
   }
 };
