@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Router } from 'express';
+import { join } from 'path'
 
 // Middlewares
 import authMiddleware from './app/middlewares/auth';
@@ -19,24 +20,25 @@ import AddressUpdate from './app/validators/AddressUpdate';
 
 const routes = new Router();
 
-routes.get('/', (req, res) => res.json({ message: 'Desafio t10lab' }));
+// docs - html documentation
+routes.get('/', (req, res) => (res.sendFile(join(`${__dirname}/../docs/index.html`))));
 
 // users - create
 routes.post('/users', UserStore, UserController.store);
 
-// session - login
+// sessions - login
 routes.post('/sessions', SessionStore, SessionController.store);
 
 // active global authenticate middleware
 routes.use(authMiddleware);
 
-// Person
+// Persons
 routes.get('/users/persons', PersonController.index);
 routes.post('/users/persons', PersonStore, PersonController.store);
 routes.put('/users/persons/:id', PersonUpdate, PersonController.update);
 routes.delete('/users/persons/:id', PersonController.delete);
 
-// Address
+// Addresses
 routes.get('/addresses', AddressController.index);
 routes.put('/addresses/persons/:personId', AddressUpdate, AddressController.update);
 routes.delete('/addresses/persons/:personId', AddressController.delete);
