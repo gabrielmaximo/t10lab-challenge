@@ -3,6 +3,11 @@ import * as Yup from 'yup';
 export default async (req, res, next) => {
   try {
     const schema = Yup.object().shape({
+      first_name: Yup.string().required(),
+      last_name: Yup.string().required(),
+      cpf: Yup.string()
+        .length(11)
+        .required(),
       address: Yup.string().required(),
       local_name: Yup.string().required(),
     });

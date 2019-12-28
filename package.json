@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "sucrase ./src -d ./dist --transforms imports",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.js",
-    "build": "sucrase ./src -d ./dist --transforms imports"
+    "aglio": "aglio -i docs/api/index.apib --theme-variables default -o docs/index.html"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.4.0",

@@ -1,0 +1,30 @@
+### Update address [PUT /addresses/persons/{personId}]
+*Edita os dados de um endereço baseado em um ID de pessoa cadastrada pelo user logado*
+
++ Request (application/json)
+    + Headers
+
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+    + Parameters
+        + Attributes
+            + personId: 5e05d7c573b8727b1e14273f (string, required)
+
+    + Attributes
+        <!-- include(../../requests/addressUpdate.apib) -->
+
++ Response 200 (application/json)
+    + Attributes
+        <!-- include(../../responses/addressUpdate.apib) -->
+
++ Response 400 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorBadRequest.apib) -->
+
++ Response 401 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorUnauthorized.apib) -->
+
++ Response 404 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorNotFound.apib) -->

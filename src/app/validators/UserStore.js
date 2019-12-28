@@ -4,7 +4,9 @@ export default async (req, res, next) => {
   try {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
-      email: Yup.string().required(),
+      email: Yup.string()
+        .email()
+        .required(),
       password: Yup.string().required(),
       confirmPassword: Yup.string()
         .required()

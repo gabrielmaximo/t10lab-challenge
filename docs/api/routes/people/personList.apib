@@ -1,0 +1,15 @@
+### List people [GET /users/persons]
+*Exibe todas as pessoas cadastrados pelo usuário logado*
+
++ Request (application/json)
+    + Headers
+
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
++ Response 200 (application/json)
+    + Attributes
+        <!-- include(../../responses/addressList.apib) -->
+
++ Response 401 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorUnauthorized.apib) -->

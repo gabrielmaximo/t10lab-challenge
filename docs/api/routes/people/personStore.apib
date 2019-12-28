@@ -1,0 +1,22 @@
+### Create person [POST /users/persons]
+*Cadastra uma nova pessoa e seu respectivo endereço com as coordenadas geograficas*
+
++ Request (application/json)
+    + Headers
+
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+    + Attributes
+        <!-- include(../../requests/personStore.apib) -->
+
++ Response 201 (application/json)
+    + Attributes
+        <!-- include(../../responses/personStore.apib) -->
+
++ Response 400 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorBadRequest.apib) -->
+
++ Response 401 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorUnauthorized.apib) -->

@@ -1,0 +1,27 @@
+### Delete address [DELETE /addresses/persons/{personId}]
+*Deleta um endereço baseado no ID de uma pessoa cadastrada pelo user logado*
+
++ Request (application/json)
+    + Headers
+
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+    + Parameters
+        + Attributes
+            + personId: 5e05d7c573b8727b1e14273f (string, required)
+
++ Response 200 (application/json)
+    + Attributes
+        <!-- include(../../responses/addressDelete.apib) -->
+
++ Response 400 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorBadRequest.apib) -->
+
++ Response 401 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorUnauthorized.apib) -->
+
++ Response 404 (aplication/json)
+    + Attributes
+        <!-- include(../../util/errorNotFound.apib) -->

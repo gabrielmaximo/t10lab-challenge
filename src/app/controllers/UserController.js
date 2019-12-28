@@ -1,6 +1,5 @@
 import sgMail from '@sendgrid/mail';
 
-// Models
 import User from '../models/User';
 
 class UserController {

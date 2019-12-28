@@ -1,0 +1,18 @@
+### Authentication [POST /sessions]
+*Rota para Login e Authenticação*
+
++ Request (application/json)
+    + Attributes
+        <!-- include(../../requests/sessionStore.apib) -->
+
++ Response 200 (application/json)
+    + Attributes
+        <!-- include(../../responses/sessionStore.apib) -->
+
++ Response 400 (application/json)
+    + Attributes
+        <!-- include(../../util/errorBadRequest.apib) -->
+
++ Response 401 (application/json)
+    + Attributes
+        <!-- include(../../util/errorUnauthorized.apib) -->
