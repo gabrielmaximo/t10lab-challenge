@@ -29,7 +29,7 @@
 ## :floppy_disk: Sobre o Base de Dados
 * Eu utilizei o MongoDB simplesmente pela questão custo beneficio, sei das desvantagens de usar em banco noSQL em todo o projeto, porém como a aplicação tinha poucos relacionamentos e nesse caso, o mongo se encaixa perfeitamente e deixa mais facil na hora de fazer o deploy e também na hora de codar, graças a um sistema similar a uma ORM feita pela lib mongoose.
 * Graças a isso, eu consegui fazer o deploy 100% gratuito para um banco de dados de até 512MB que o cloud do mongo DB atlas oferece.
-* Eu também uso bastante bancos SQL como o postgress junto com a ORM do sequelize quando desenvolvo com o express no nodeJS, fiz um repositório que ensino como usar o Sequelize e criar relacionamentos 1:n, 1:1, m:n nessa ORM que é bem parecido com esse teste, caso queira dar uma olhada é só clicar [AQUI]()
+* Eu também uso bastante bancos SQL como o postgress junto com a ORM do sequelize quando desenvolvo com o express no nodeJS, fiz um repositório que ensino como usar o Sequelize e criar relacionamentos 1:n, 1:1, m:n nessa ORM que é bem parecido com esse teste, caso queira dar uma olhada é só clicar [AQUI](https://github.com/gabrielmaximo/Sequelize-ORM)
 
 ## :email: Sobre o serviço de SMTP para envio de emails
 * Eu não consegui utilizar o ZIMBRA como vocês sugerem, nunca tinha utilizado ele, tentei encontrar algum tutorial ou suporte para implementar, porém não achei nada que ajudasse, então optei pelo SENDGRID, um serviço prático, simples, rápido e gratuito, para poder combar com o cloud do mongoDB Atlas e o deploy do heroku e poder obter uma API 100% gratuita online.
