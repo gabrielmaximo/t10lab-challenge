@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img alt="Frontend" src=".github/t10lab.png" width="30%">
+  <img alt="Frontend" src=".github/t10lab.png" width="40%">
 </p>
 
 ## :clipboard: Documentação disponível na [Base URL](https://t10lab.herokuapp.com/#addresses-update-address-put) do projeto
