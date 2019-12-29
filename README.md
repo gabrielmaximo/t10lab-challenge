@@ -31,7 +31,7 @@
 * Graças a isso, eu consegui fazer o deploy 100% gratuito para um banco de dados de até 512MB que o cloud do mongo DB atlas oferece.
 * Eu também uso bastante bancos SQL como o postgress junto com a ORM do sequelize quando desenvolvo com o express no nodeJS, fiz um repositório que ensino como usar o Sequelize e criar relacionamentos 1:n, 1:1, m:n nessa ORM que é bem parecido com esse teste, caso queira dar uma olhada é só clicar [AQUI](https://github.com/gabrielmaximo/Sequelize-ORM)
 
-## :email: Sobre o serviço de SMTP para envio de emails
+## :email: Sobre o serviço de SMTP
 * Eu não consegui utilizar o ZIMBRA como vocês sugerem, nunca tinha utilizado ele, tentei encontrar algum tutorial ou suporte para implementar, porém não achei nada que me ajudou. Então optei pelo SENDGRID, um serviço prático, simples, rápido e gratuito, para poder combar com o cloud do mongoDB Atlas e o deploy do heroku obtendo uma API 100% gratuita online.
 * Para saber mais como o SENDGRID funciona e como ele é pratico, acesse [AQUI](https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail), ele é o mesmo usado pela Uber, Spotify, AirBnB e etc..
 * Toda vez que criar um usuário, você receberá um email de boas vindas no email que cadastrou com a menssagem "Seja bem vindo ao Reino 'nome do usurário aqui'!.
