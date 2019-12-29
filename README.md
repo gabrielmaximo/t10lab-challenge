@@ -26,7 +26,7 @@
 * Eu escolhi o heroku, pois ele oferece até 5 projetos gratuitos, e ele  bem facil de manusear e configurar, mas ele não tem suporte a docker nos projetos gratuitos, por isso utilizei um cloud gratuito do mongo DB de até 512MB para manter a base de dados online junto com o servidor.
 * Com isso basta abrir o insomina ou o postman e usar a url do heroku para testar as rotas da aplicação.
 
-## :floppy_disk: Sobre o Base de Dados
+## :floppy_disk: Sobre a Base de Dados
 * Eu utilizei o MongoDB simplesmente pela questão custo beneficio, sei das desvantagens de usar em banco noSQL em todo o projeto, porém como a aplicação tinha poucos relacionamentos e nesse caso, o mongo se encaixa perfeitamente e deixa mais facil na hora de fazer o deploy e também na hora de codar, graças a um sistema similar a uma ORM feita pela lib mongoose.
 * Graças a isso, eu consegui fazer o deploy 100% gratuito para um banco de dados de até 512MB que o cloud do mongo DB atlas oferece.
 * Eu também uso bastante bancos SQL como o postgress junto com a ORM do sequelize quando desenvolvo com o express no nodeJS, fiz um repositório que ensino como usar o Sequelize e criar relacionamentos 1:n, 1:1, m:n nessa ORM que é bem parecido com esse teste, caso queira dar uma olhada é só clicar [AQUI](https://github.com/gabrielmaximo/Sequelize-ORM)
