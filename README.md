@@ -41,7 +41,9 @@
 * Consegui salvar as cordenadas geograficas da pessoa cadastrada com sucesso, porém não consegui as fotos do local, infelizmente, outro detalhe é que fiquei confuso na hora de fazer o endpoint de cadastro de pessoa, pois não sabia se o endereço seria cadastrado junto com a pessoa ou separado, então acabei escolhendo o cadastro do endereço junto ao cadastro de uma pessoa.
 
 ## :camera: Sobre o sistema de Bucket
-* Infelizmente não consegui obter as fotos da API do google maps, a Place API do google possui mais de um serviço para obter geolocation e fotos, que no caso, é o Place Search e o Place Photos, eu utilize o Place Search para obter as cordenadas geograficas e um token para acessar a foto do local nessa outro serviço chamado Place Photo. Porém essa segunda API me retorna o base64 do arquivo png da imagem, e eu no soube trabalhar com ele para exibi-las e fazer o upload delas no serviço AWS da Amazon
+* Infelizmente não consegui obter as fotos da API do google maps, a Place API do google possui mais de um serviço para obter geolocation e fotos, que no caso, é o Place Search e o Place Photos, eu utilize o Place Search para obter as cordenadas geograficas e um token para acessar a foto do local nesse outro serviço chamado Place Photo. Porém essa segunda API me retorna o base64 do arquivo png da imagem, e eu não soube trabalhar com ele para exibi-las e fazer o upload delas 
+
+serviço AWS da Amazon
 * Ja utilizei o serviço AWS S3 da amazon varias vezes, ele é um dos melhores tanto para upload de imagens quanto para SMTP, porém como não consegui nem obter a imagem, portante não fiz o upload dela, geralmente eu utilizo o multer para trabalhar com arquivos mult part form, mas com base 64 não deu certo, fico devendo essa parte. Ainda tenho muito o que aprender hehe.
 
 ## :arrow_forward: Como executar o projeto?
