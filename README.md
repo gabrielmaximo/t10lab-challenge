@@ -35,6 +35,7 @@
 * Eu não consegui utilizar o ZIMBRA como vocês sugerem, nunca tinha utilizado ele, tentei encontrar algum tutorial ou suporte para implementar, porém não achei nada que me ajudou. Então optei pelo SENDGRID, um serviço prático, simples, rápido e gratuito, para poder combar com o cloud do mongoDB Atlas e o deploy do heroku obtendo uma API 100% gratuita online.
 * Para saber mais como o SENDGRID funciona e como ele é pratico, acesse [AQUI](https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail), ele é o mesmo usado pela Uber, Spotify, AirBnB e etc..
 * Toda vez que criar um usuário, você receberá um email de boas vindas no email que cadastrou com a menssagem "Seja bem vindo ao Reino 'nome do usurário aqui'!.
+* **OBS:** Verificar se o email no foi para o spam.
 
 ## :earth_asia: Sobre o serviço de Geo Location
 * Utilizei a Place API do google maps, ao invés da Geocoding API, a diferença entre elas é que a Place API retorna mais informações sobre um local e o token de photo, e a Geocoding retorna mais sobre o endereço mesmo e não retorna fotos, porém a Place API exige que você insira um dado a mais além do endereço, que seria o Place Name, para identificar as fotos daquele local, exemplo: Prefeitura, Center Shopping, T10 Lab, etc..
